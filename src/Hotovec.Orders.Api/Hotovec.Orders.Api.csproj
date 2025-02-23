@@ -21,4 +21,8 @@
       <ProjectReference Include="..\Hotovec.Orders.Infrastructure\Hotovec.Orders.Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+        <InternalsVisibleTo Include="Hotovec.Orders.Api.Test" />
+    </ItemGroup>
+
 </Project>

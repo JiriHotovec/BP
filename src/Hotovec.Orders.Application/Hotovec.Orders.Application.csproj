@@ -10,4 +10,8 @@
       <ProjectReference Include="..\Hotovec.Orders.Domain\Hotovec.Orders.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+        <InternalsVisibleTo Include="Hotovec.Orders.Application.Test" />
+    </ItemGroup>
+
 </Project>
