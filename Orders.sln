@@ -2,6 +2,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotovec.Orders.Api", "src\Hotovec.Orders.Api\Hotovec.Orders.Api.csproj", "{C83558D2-B5CF-43BE-946A-8C2E513A6E25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotovec.Orders.Domain", "src\Hotovec.Orders.Domain\Hotovec.Orders.Domain.csproj", "{FD20A286-D43D-4A7E-A00B-80FB8AC05765}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotovec.Orders.Application", "Hotovec.Orders.Application\Hotovec.Orders.Application.csproj", "{5793884A-FCFE-421F-A211-7D389699C224}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotovec.Orders.Infrastructure", "Hotovec.Orders.Infrastructure\Hotovec.Orders.Infrastructure.csproj", "{15AFD16E-EA85-4C64-A0B1-2A14B5215443}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +18,17 @@ Global
 		{C83558D2-B5CF-43BE-946A-8C2E513A6E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C83558D2-B5CF-43BE-946A-8C2E513A6E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C83558D2-B5CF-43BE-946A-8C2E513A6E25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD20A286-D43D-4A7E-A00B-80FB8AC05765}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD20A286-D43D-4A7E-A00B-80FB8AC05765}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD20A286-D43D-4A7E-A00B-80FB8AC05765}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD20A286-D43D-4A7E-A00B-80FB8AC05765}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5793884A-FCFE-421F-A211-7D389699C224}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5793884A-FCFE-421F-A211-7D389699C224}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5793884A-FCFE-421F-A211-7D389699C224}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5793884A-FCFE-421F-A211-7D389699C224}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15AFD16E-EA85-4C64-A0B1-2A14B5215443}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15AFD16E-EA85-4C64-A0B1-2A14B5215443}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15AFD16E-EA85-4C64-A0B1-2A14B5215443}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15AFD16E-EA85-4C64-A0B1-2A14B5215443}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
