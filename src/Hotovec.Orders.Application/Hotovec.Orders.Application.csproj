@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\src\Hotovec.Orders.Domain\Hotovec.Orders.Domain.csproj" />
+      <ProjectReference Include="..\Hotovec.Orders.Domain\Hotovec.Orders.Domain.csproj" />
     </ItemGroup>
 
 </Project>

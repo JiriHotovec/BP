@@ -18,7 +18,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Hotovec.Orders.Infrastructure\Hotovec.Orders.Infrastructure.csproj" />
+      <ProjectReference Include="..\Hotovec.Orders.Infrastructure\Hotovec.Orders.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
