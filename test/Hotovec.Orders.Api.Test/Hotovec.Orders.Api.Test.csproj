@@ -6,8 +6,4 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\Hotovec.Orders.Application\Hotovec.Orders.Application.csproj" />
-    </ItemGroup>
-
 </Project>

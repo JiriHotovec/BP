@@ -4,9 +4,21 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotovec.Orders.Api", "src\H
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotovec.Orders.Domain", "src\Hotovec.Orders.Domain\Hotovec.Orders.Domain.csproj", "{FD20A286-D43D-4A7E-A00B-80FB8AC05765}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotovec.Orders.Application", "Hotovec.Orders.Application\Hotovec.Orders.Application.csproj", "{5793884A-FCFE-421F-A211-7D389699C224}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotovec.Orders.Application", "src\Hotovec.Orders.Application\Hotovec.Orders.Application.csproj", "{5793884A-FCFE-421F-A211-7D389699C224}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotovec.Orders.Infrastructure", "Hotovec.Orders.Infrastructure\Hotovec.Orders.Infrastructure.csproj", "{15AFD16E-EA85-4C64-A0B1-2A14B5215443}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotovec.Orders.Infrastructure", "src\Hotovec.Orders.Infrastructure\Hotovec.Orders.Infrastructure.csproj", "{15AFD16E-EA85-4C64-A0B1-2A14B5215443}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotovec.Orders.Infrastructure.Test", "test\Hotovec.Orders.Infrastructure.Test\Hotovec.Orders.Infrastructure.Test.csproj", "{F7AD4A07-37AB-4A14-A75B-E34C59546829}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{DD54764B-956A-4DFE-A0EC-8B92EFCDEB0C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E215644A-5245-4EB1-AEAF-9AB4EF068844}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotovec.Orders.Domain.Test", "test\Hotovec.Orders.Domain.Test\Hotovec.Orders.Domain.Test.csproj", "{A90E967C-9FE5-4CD0-ABE6-102B2DAAF1AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotovec.Orders.Application.Test", "test\Hotovec.Orders.Application.Test\Hotovec.Orders.Application.Test.csproj", "{03EFA297-24D6-4E3C-8E9E-A63294D3651A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotovec.Orders.Api.Test", "test\Hotovec.Orders.Api.Test\Hotovec.Orders.Api.Test.csproj", "{BE17F13E-090F-481B-AEE4-E0F9A7D75392}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +42,31 @@ Global
 		{15AFD16E-EA85-4C64-A0B1-2A14B5215443}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15AFD16E-EA85-4C64-A0B1-2A14B5215443}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15AFD16E-EA85-4C64-A0B1-2A14B5215443}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7AD4A07-37AB-4A14-A75B-E34C59546829}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7AD4A07-37AB-4A14-A75B-E34C59546829}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7AD4A07-37AB-4A14-A75B-E34C59546829}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7AD4A07-37AB-4A14-A75B-E34C59546829}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A90E967C-9FE5-4CD0-ABE6-102B2DAAF1AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A90E967C-9FE5-4CD0-ABE6-102B2DAAF1AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A90E967C-9FE5-4CD0-ABE6-102B2DAAF1AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A90E967C-9FE5-4CD0-ABE6-102B2DAAF1AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03EFA297-24D6-4E3C-8E9E-A63294D3651A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03EFA297-24D6-4E3C-8E9E-A63294D3651A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03EFA297-24D6-4E3C-8E9E-A63294D3651A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03EFA297-24D6-4E3C-8E9E-A63294D3651A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE17F13E-090F-481B-AEE4-E0F9A7D75392}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE17F13E-090F-481B-AEE4-E0F9A7D75392}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE17F13E-090F-481B-AEE4-E0F9A7D75392}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE17F13E-090F-481B-AEE4-E0F9A7D75392}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F7AD4A07-37AB-4A14-A75B-E34C59546829} = {DD54764B-956A-4DFE-A0EC-8B92EFCDEB0C}
+		{C83558D2-B5CF-43BE-946A-8C2E513A6E25} = {E215644A-5245-4EB1-AEAF-9AB4EF068844}
+		{5793884A-FCFE-421F-A211-7D389699C224} = {E215644A-5245-4EB1-AEAF-9AB4EF068844}
+		{FD20A286-D43D-4A7E-A00B-80FB8AC05765} = {E215644A-5245-4EB1-AEAF-9AB4EF068844}
+		{15AFD16E-EA85-4C64-A0B1-2A14B5215443} = {E215644A-5245-4EB1-AEAF-9AB4EF068844}
+		{A90E967C-9FE5-4CD0-ABE6-102B2DAAF1AD} = {DD54764B-956A-4DFE-A0EC-8B92EFCDEB0C}
+		{03EFA297-24D6-4E3C-8E9E-A63294D3651A} = {DD54764B-956A-4DFE-A0EC-8B92EFCDEB0C}
+		{BE17F13E-090F-481B-AEE4-E0F9A7D75392} = {DD54764B-956A-4DFE-A0EC-8B92EFCDEB0C}
 	EndGlobalSection
 EndGlobal
