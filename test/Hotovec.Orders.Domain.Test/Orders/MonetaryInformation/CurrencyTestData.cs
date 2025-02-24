@@ -1,7 +1,7 @@
 ﻿using System.Collections;
-using Hotovec.Orders.Domain.Orders;
+using Hotovec.Orders.Domain.Orders.MonetaryInformation;
 
-namespace Hotovec.Orders.Domain.Test.Orders;
+namespace Hotovec.Orders.Domain.Test.Orders.MonetaryInformation;
 
 /// <summary>
 /// Test data for <see cref="Currency"/>

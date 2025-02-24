@@ -1,4 +1,4 @@
-﻿namespace Hotovec.Orders.Domain.Orders;
+﻿namespace Hotovec.Orders.Domain.Orders.MonetaryInformation;
 
 public readonly record struct Currency
 {

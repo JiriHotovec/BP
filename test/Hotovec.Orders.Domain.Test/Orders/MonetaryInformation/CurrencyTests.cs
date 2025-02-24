@@ -1,8 +1,8 @@
 ﻿using FluentAssertions;
-using Hotovec.Orders.Domain.Orders;
+using Hotovec.Orders.Domain.Orders.MonetaryInformation;
 using Xunit;
 
-namespace Hotovec.Orders.Domain.Test.Orders;
+namespace Hotovec.Orders.Domain.Test.Orders.MonetaryInformation;
 
 public sealed class CurrencyTests
 {
