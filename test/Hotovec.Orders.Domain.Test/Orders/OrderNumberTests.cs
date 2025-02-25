@@ -1,6 +1,4 @@
-﻿using FluentAssertions;
-using Hotovec.Orders.Domain.Orders;
-using Xunit;
+﻿using Hotovec.Orders.Domain.Orders;
 
 namespace Hotovec.Orders.Domain.Test.Orders;
 

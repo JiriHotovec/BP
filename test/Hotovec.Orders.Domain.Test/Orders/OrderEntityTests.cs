@@ -1,10 +1,8 @@
-﻿using FluentAssertions;
-using Hotovec.Orders.Domain.Common.Exceptions;
+﻿using Hotovec.Orders.Domain.Common.Exceptions;
 using Hotovec.Orders.Domain.Orders;
 using Hotovec.Orders.Domain.Orders.Dtos;
 using Hotovec.Orders.Domain.Orders.MonetaryInformation;
 using Hotovec.Orders.Domain.Orders.Snapshots;
-using Xunit;
 
 namespace Hotovec.Orders.Domain.Test.Orders;
 

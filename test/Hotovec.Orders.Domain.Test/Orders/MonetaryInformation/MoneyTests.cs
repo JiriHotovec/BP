@@ -1,7 +1,5 @@
-﻿using FluentAssertions;
-using Hotovec.Orders.Domain.Orders.MonetaryInformation;
+﻿using Hotovec.Orders.Domain.Orders.MonetaryInformation;
 using Hotovec.Orders.Domain.Orders.Snapshots;
-using Xunit;
 using Xunit.Abstractions;
 
 namespace Hotovec.Orders.Domain.Test.Orders.MonetaryInformation;
