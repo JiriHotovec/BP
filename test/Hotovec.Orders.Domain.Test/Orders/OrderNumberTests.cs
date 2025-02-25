@@ -37,6 +37,7 @@ public sealed class OrderNumberTests
     [InlineData("ORDER")]
     [InlineData("ORDER_")]
     [InlineData("ORDER_0X0")]
+    [InlineData("ORDER_-1")]
     public void Ctor_InvalidInput_ThrowsArgumentException(string orderNumber)
     {
         // Arrange
