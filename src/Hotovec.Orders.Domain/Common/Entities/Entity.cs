@@ -13,6 +13,8 @@ public abstract class Entity<TId, TSnapshot> : ISnapshotable<TSnapshot>
 {
     protected Entity(TId id)
     {
+        ArgumentNullException.ThrowIfNull(id);
+        
         Id = id;
     }
     
