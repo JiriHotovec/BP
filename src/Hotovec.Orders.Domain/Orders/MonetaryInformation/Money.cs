@@ -1,6 +1,6 @@
 ﻿using Hotovec.Orders.Domain.Common.Snapshots;
-using Hotovec.Orders.Domain.Orders.EntitySnapshots;
 using Hotovec.Orders.Domain.Orders.Rounding;
+using Hotovec.Orders.Domain.Orders.Snapshots;
 
 namespace Hotovec.Orders.Domain.Orders.MonetaryInformation;
 
@@ -23,6 +23,8 @@ public sealed class Money : IEquatable<Money>, IComparable<Money>, IComparable, 
 
     public static Money FromSnapshot(MoneySnapshot snapshot)
     {
+        ArgumentNullException.ThrowIfNull(snapshot);
+        
         return new Money(snapshot.Amount!.Value, new Currency(snapshot.Currency!));
     }
 

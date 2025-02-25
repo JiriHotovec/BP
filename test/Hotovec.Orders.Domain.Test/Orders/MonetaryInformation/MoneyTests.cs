@@ -1,6 +1,6 @@
 ﻿using FluentAssertions;
-using Hotovec.Orders.Domain.Orders.EntitySnapshots;
 using Hotovec.Orders.Domain.Orders.MonetaryInformation;
+using Hotovec.Orders.Domain.Orders.Snapshots;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -76,13 +76,13 @@ public sealed class MoneyTests(ITestOutputHelper _testOutputHelper)
         var moneyRight = new Money(1657.215M, new Currency("USD"));
         
         // Act
-        var actual = () => moneyLeft.CompareTo(moneyRight);
+        var actual = () => _ = moneyLeft.CompareTo(moneyRight);
         
         // Assert
         actual.Should()
             .Throw<ArgumentException>()
             .WithMessage("Unable to compare money with different currencies. Currencies:*");
-    } 
+    }
  
     [Fact]
     public void CompareTo_DifferentCurrencies_ThrowsArgumentException_GetMessageTechnique()
@@ -110,7 +110,7 @@ public sealed class MoneyTests(ITestOutputHelper _testOutputHelper)
         actual.Should()
             .Throw<ArgumentException>()
             .WithMessage("Unable to compare money with different currencies. Currencies:*");
-    } 
+    }
     
     [Theory]
     [InlineData(10.33, 20.0, -1)]
