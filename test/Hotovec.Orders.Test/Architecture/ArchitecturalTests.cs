@@ -18,7 +18,7 @@ public class ArchitecturalTests
         var assemblies = assemblyNames.Select(Assembly.Load);
         
         // Act
-        var result = Types
+        var actual = Types
             .InAssemblies(assemblies)
             .That()
             .AreInterfaces()
@@ -27,7 +27,7 @@ public class ArchitecturalTests
             .GetResult();
 
         // Assert
-        Assert.True(result.IsSuccessful);
+        actual.IsSuccessful.Should().BeTrue();
     }
     
     [Fact]
@@ -40,7 +40,7 @@ public class ArchitecturalTests
         var assemblies = assemblyNames.Select(Assembly.Load);
         
         // Act
-        var result = Types
+        var actual = Types
             .InAssemblies(assemblies)
             .That()
             .Inherit(typeof(Entity<,>))
@@ -49,6 +49,6 @@ public class ArchitecturalTests
             .GetResult();
 
         // Assert
-        Assert.True(result.IsSuccessful);
+        actual.IsSuccessful.Should().BeTrue();
     }
 }
