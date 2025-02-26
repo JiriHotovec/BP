@@ -2,5 +2,5 @@
 
 public interface IQueryHandler<in TInput,TOutput>
 {
-    Task<TOutput> ExecuteQueryAsync(TInput input, CancellationToken cancellationToken = default);
+    Task<TOutput> ExecuteAsync(TInput input, CancellationToken cancellationToken = default);
 }
