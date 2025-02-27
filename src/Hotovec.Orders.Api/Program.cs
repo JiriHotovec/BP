@@ -1,37 +1,45 @@
 using Hotovec.Orders.Application.Extensions;
 using Hotovec.Orders.Infrastructure.Extensions;
 
-var builder = WebApplication.CreateBuilder(args);
+namespace Hotovec.Orders.Api;
 
-var services = builder.Services;
-var configuration = builder.Configuration;
-
-services.AddControllers();
-services.AddOpenApi();
-services.AddEndpointsApiExplorer();
-services.AddSwaggerGen();
-
-services
-    .AddApplication()
-    .AddInfrastructure(configuration);
-
-var app = builder.Build();
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-if (app.Environment.IsDevelopment())
+public class Program
 {
-    app.MapOpenApi();
-    app.UseSwagger();
-    app.UseSwaggerUI(options =>
+    public static void Main(string[] args)
     {
-        options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-        options.RoutePrefix = string.Empty;
-    });
-}
+        var builder = WebApplication.CreateBuilder(args);
 
-app.Run();
+        var services = builder.Services;
+        var configuration = builder.Configuration;
+
+        services.AddControllers();
+        services.AddOpenApi();
+        services.AddEndpointsApiExplorer();
+        services.AddSwaggerGen();
+
+        services
+            .AddApplication()
+            .AddInfrastructure(configuration);
+
+        var app = builder.Build();
+
+        app.UseHttpsRedirection();
+
+        app.UseAuthorization();
+
+        app.MapControllers();
+
+        if (app.Environment.IsDevelopment())
+        {
+            app.MapOpenApi();
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+                options.RoutePrefix = string.Empty;
+            });
+        }
+
+        app.Run();
+    }
+}
