@@ -15,7 +15,7 @@ public sealed class OrderEntity : Entity<OrderNumber,OrderSnapshot>
         string customerName,
         Currency currency,
         DateTimeOffset dateCreated,
-        IEnumerable<OrderItemDto> items)
+        params OrderItemDto[] items)
     : base(orderNumber)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(customerName);
@@ -32,7 +32,7 @@ public sealed class OrderEntity : Entity<OrderNumber,OrderSnapshot>
         for (int i = 0; i < localItems.Length; i++)
         {
             var currentItem = localItems[i];
-            var orderItem = new OrderItemEntity(i+1,currentItem.ProductName,currentItem.UnitPrice,currentItem.Quantity);
+            var orderItem = new OrderItemEntity(i+1, currentItem.ProductName, currentItem.UnitPrice, currentItem.Quantity);
             _orderItems.Add(orderItem);    
         }
     }
