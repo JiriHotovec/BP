@@ -1,6 +1,6 @@
 ﻿using Hotovec.Orders.Domain.Orders;
 
-namespace Hotovec.Orders.Application.Persistance;
+namespace Hotovec.Orders.Application.Persistence;
 
 /// <summary>
 /// Represents the repository interface for managing and accessing <see cref="OrderEntity"/> instances.

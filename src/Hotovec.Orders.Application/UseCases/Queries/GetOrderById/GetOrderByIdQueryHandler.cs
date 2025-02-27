@@ -1,4 +1,4 @@
-using Hotovec.Orders.Application.Persistance;
+using Hotovec.Orders.Application.Persistence;
 using Hotovec.Orders.Application.UseCases.Common;
 using Hotovec.Orders.Domain.Orders;
 

@@ -1,15 +1,19 @@
 using Hotovec.Orders.Application.Extensions;
+using Hotovec.Orders.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var services = builder.Services;
+var configuration = builder.Configuration;
 
 services.AddControllers();
 services.AddOpenApi();
 services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
 
-services.AddApplication();
+services
+    .AddApplication()
+    .AddInfrastructure(configuration);
 
 var app = builder.Build();
 
