@@ -3,7 +3,7 @@
 public sealed class DependenciesTests
 {
     [Fact]
-    public void Domain_CorrectDependencies_ReturnsTrue()
+    public void DomainLayer_CorrectDependencies_ReturnsTrue()
     {
         // Arrange
         // Act
@@ -21,7 +21,7 @@ public sealed class DependenciesTests
     }
     
     [Fact]
-    public void Application_CorrectDependencies_ReturnsTrue()
+    public void ApplicationLayer_CorrectDependencies_ReturnsTrue()
     {
         // Arrange
         // Act
@@ -38,7 +38,7 @@ public sealed class DependenciesTests
     }
 
     [Fact]
-    public void Infrastructure_CorrectDependencies_ReturnsTrue()
+    public void InfrastructureLayer_CorrectDependencies_ReturnsTrue()
     {
         // Arrange
         // Act
