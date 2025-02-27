@@ -4,7 +4,7 @@ using Hotovec.Orders.Domain.Orders;
 
 namespace Hotovec.Orders.Application.UseCases.Queries.GetOrderById;
 
-public class GetOrderByIdQueryHandler : IQueryHandler<GetOrderByIdQuery, OrderEntity?>
+public sealed class GetOrderByIdQueryHandler : IQueryHandler<GetOrderByIdQuery, OrderEntity?>
 {
     private readonly IOrderEntityRepository _repository;
 
