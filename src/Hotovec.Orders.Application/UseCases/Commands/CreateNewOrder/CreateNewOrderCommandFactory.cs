@@ -3,11 +3,11 @@ using Hotovec.Orders.Domain.Orders.Dtos;
 
 namespace Hotovec.Orders.Application.UseCases.Commands.CreateNewOrder;
 
-public sealed class CreateNewOrderCommandOrderFactory : ICreateNewOrderCommandOrderFactory
+public sealed class CreateNewOrderCommandFactory : ICreateNewOrderCommandFactory
 {
     private readonly TimeProvider _timeProvider;
 
-    public CreateNewOrderCommandOrderFactory(TimeProvider timeProvider)
+    public CreateNewOrderCommandFactory(TimeProvider timeProvider)
     {
         _timeProvider = timeProvider;
     }

@@ -8,9 +8,9 @@ namespace Hotovec.Orders.Application.UseCases.Commands.CreateNewOrder;
 public sealed class CreateNewOrderCommandHandler : ICommandHandler<CreateNewOrderCommand>
 {
     private readonly IOrderEntityRepository _repository;
-    private readonly ICreateNewOrderCommandOrderFactory _factory;
+    private readonly ICreateNewOrderCommandFactory _factory;
 
-    public CreateNewOrderCommandHandler(IOrderEntityRepository repository, ICreateNewOrderCommandOrderFactory factory)
+    public CreateNewOrderCommandHandler(IOrderEntityRepository repository, ICreateNewOrderCommandFactory factory)
     {
         _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         _factory = factory ?? throw new ArgumentNullException(nameof(factory));

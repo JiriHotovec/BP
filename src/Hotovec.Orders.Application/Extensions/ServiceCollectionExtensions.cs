@@ -16,7 +16,7 @@ public static class ServiceCollectionExtensions
         services.TryAddSingleton(TimeProvider.System);
         services.TryAddScoped<IQueryHandler<GetOrderByIdQuery, OrderEntity?>, GetOrderByIdQueryHandler>();
         services.TryAddScoped<ICommandHandler<CreateNewOrderCommand>, CreateNewOrderCommandHandler>();
-        services.TryAddSingleton<ICreateNewOrderCommandOrderFactory, CreateNewOrderCommandOrderFactory>();
+        services.TryAddSingleton<ICreateNewOrderCommandFactory, CreateNewOrderCommandFactory>();
 
         return services;
     }
