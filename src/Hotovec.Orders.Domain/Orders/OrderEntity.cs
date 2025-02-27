@@ -48,6 +48,7 @@ public sealed class OrderEntity : Entity<OrderNumber,OrderSnapshot>
         _orderItems.AddRange(snapshot.Items.Select(i => new OrderItemEntity(i)));
     }
     
+    // TODO BP - refactor DateCreated { get; } = DateTimeOffset.UtcNow(), cannot be tested -> Factory with injected TimeProvider
     public DateTimeOffset DateCreated { get; }
 
     public Currency Currency { get; }
