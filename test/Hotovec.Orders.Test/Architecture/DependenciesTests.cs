@@ -1,5 +1,6 @@
 ﻿namespace Hotovec.Orders.Test.Architecture;
 
+[Category("architecture")]
 public sealed class DependenciesTests
 {
     [Fact]

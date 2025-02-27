@@ -4,6 +4,7 @@ using Xunit.Abstractions;
 
 namespace Hotovec.Orders.Domain.Test.Orders.MonetaryInformation;
 
+[Category("unit")]
 public sealed class MoneyTests(ITestOutputHelper _testOutputHelper)
 {
     [Fact]

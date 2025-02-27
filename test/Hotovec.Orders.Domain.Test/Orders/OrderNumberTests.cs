@@ -2,6 +2,7 @@
 
 namespace Hotovec.Orders.Domain.Test.Orders;
 
+[Category("unit")]
 public sealed class OrderNumberTests
 {
     [Fact]

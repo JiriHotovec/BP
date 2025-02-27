@@ -3,7 +3,8 @@ using Hotovec.Orders.Domain.Common.Entities;
 
 namespace Hotovec.Orders.Test.Architecture;
 
-public class NamingConventionTests
+[Category("architecture")]
+public sealed class NamingConventionTests
 {
     [Fact]
     public void Interfaces_WithIPrefix_ReturnsTrue()

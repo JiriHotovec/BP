@@ -2,6 +2,7 @@
 
 namespace Hotovec.Orders.Domain.Test.Orders.MonetaryInformation;
 
+[Category("unit")]
 public sealed class CurrencyTests
 {
     [Theory]

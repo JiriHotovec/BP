@@ -6,6 +6,7 @@ using Hotovec.Orders.Domain.Orders.Snapshots;
 
 namespace Hotovec.Orders.Domain.Test.Orders;
 
+[Category("unit")]
 public sealed class OrderEntityTests
 {
     [Fact]
