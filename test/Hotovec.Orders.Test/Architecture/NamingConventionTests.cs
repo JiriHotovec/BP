@@ -3,17 +3,17 @@ using Hotovec.Orders.Domain.Common.Entities;
 
 namespace Hotovec.Orders.Test.Architecture;
 
-public class ArchitecturalTests
+public class NamingConventionTests
 {
     [Fact]
     public void Interfaces_WithIPrefix_ReturnsTrue()
     {
         // Arrange
         string[] assemblyNames = [
-            "Hotovec.Orders.Api",
-            "Hotovec.Orders.Application",
-            "Hotovec.Orders.Domain",
-            "Hotovec.Orders.Infrastructure",
+            AssemblyConstants.ApiAssemblyName,
+            AssemblyConstants.ApplicationAssemblyName,
+            AssemblyConstants.DomainAssemblyName,
+            AssemblyConstants.InfrastructureAssemblyName,
         ];
         var assemblies = assemblyNames.Select(Assembly.Load);
         
@@ -35,7 +35,7 @@ public class ArchitecturalTests
     {
         // Arrange
         string[] assemblyNames = [
-            "Hotovec.Orders.Domain"
+            AssemblyConstants.DomainAssemblyName
         ];
         var assemblies = assemblyNames.Select(Assembly.Load);
         
