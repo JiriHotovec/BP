@@ -12,6 +12,7 @@
 
     <ItemGroup>
         <InternalsVisibleTo Include="Hotovec.Orders.Infrastructure.Test" />
+        <InternalsVisibleTo Include="Hotovec.Orders.Integration.Test" />
     </ItemGroup>
 
     <ItemGroup>
