@@ -23,8 +23,6 @@ public sealed class OrdersController(
     ILogger<OrdersController> _logger)
     : ControllerBase
 {
-    private readonly ILogger<OrdersController> _logger = _logger ?? throw new ArgumentNullException(nameof(_logger));
-    
     [HttpGet]
     [ProducesResponseType(typeof(GetAllOrdersResponse), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetAllOrders(CancellationToken cancellationToken = default)
