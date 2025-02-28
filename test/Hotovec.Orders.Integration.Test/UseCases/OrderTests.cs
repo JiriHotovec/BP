@@ -56,6 +56,36 @@ public sealed class OrderTests(CustomWebApplicationFactory factory)
         await actual.Should().NotThrowAsync();
     }
     
+    [Fact]
+    public async Task CreateAndDeleteOrderAsync()
+    {
+        // Arrange
+        const string orderNumber = "ORDER_10";
+        var createOrderRequest = new CreateOrderRequest(
+            orderNumber,
+            "Jack Black",
+            "EUR",
+            [
+                new CreateOrderItem(1, "Item 1", 299.9m, 10)
+            ]);
+        var createOrderJson = JsonSerializer.Serialize(createOrderRequest);
+        var stringContent = new StringContent(createOrderJson, Encoding.UTF8, "application/json");
+        var client = _factory.CreateClient();
+
+        // Act
+        var actual = async () =>
+        {
+            var createResponse = await client.PostAsync("/api/Orders/Create", stringContent);
+            createResponse.EnsureSuccessStatusCode();
+
+            var queryResponse = await client.DeleteAsync($"/api/Orders/{orderNumber}");
+            queryResponse.EnsureSuccessStatusCode();
+        };
+
+        // Assert
+        await actual.Should().NotThrowAsync();
+    }
+    
     private bool _isDisposed;
 
     public ValueTask DisposeAsync()

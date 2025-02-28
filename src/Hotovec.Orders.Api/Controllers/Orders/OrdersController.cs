@@ -1,7 +1,9 @@
 using Hotovec.Orders.Api.Controllers.Orders.CreateOrder;
+using Hotovec.Orders.Api.Controllers.Orders.DeleteOrder;
 using Hotovec.Orders.Api.Controllers.Orders.GetOrderById;
 using Hotovec.Orders.Api.Extensions;
 using Hotovec.Orders.Application.UseCases.Commands.CreateOrder;
+using Hotovec.Orders.Application.UseCases.Commands.DeleteOrder;
 using Hotovec.Orders.Application.UseCases.Common;
 using Hotovec.Orders.Application.UseCases.Queries.GetOrderById;
 using Microsoft.AspNetCore.Mvc;
@@ -14,6 +16,7 @@ namespace Hotovec.Orders.Api.Controllers.Orders;
 public sealed class OrdersController(
     IQueryHandler<GetOrderByIdQuery, GetOrderByIdResult> _getOrderByIdQueryHandler,
     ICommandHandler<CreateOrderCommand> _createOrderCommandHandler,
+    ICommandHandler<DeleteOrderCommand, bool> _deleteOrderCommandHandler,
     ILogger<OrdersController> _logger)
     : ControllerBase
 {
@@ -54,5 +57,22 @@ public sealed class OrdersController(
             .ExecuteAsync(request.AsCommand(), cancellationToken);
 
         return CreatedAtAction(nameof(GetOrderById), new { OrderNumber = request.OrderNumber }, null);
+    }
+    
+    [HttpDelete("{OrderNumber}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> DeleteOrder(
+        [FromRoute] DeleteOrderRequest request,
+        CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(request);
+        
+        _logger.LogInformation("Deleting order [{OrderNumber}]", request.OrderNumber);
+        
+        var result = await _deleteOrderCommandHandler
+            .ExecuteAsync(request.AsCommand(), cancellationToken);
+
+        return result ? Ok() : NotFound();
     }
 }

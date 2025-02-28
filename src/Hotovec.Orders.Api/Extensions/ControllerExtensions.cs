@@ -1,6 +1,8 @@
 ﻿using Hotovec.Orders.Api.Controllers.Orders.CreateOrder;
+using Hotovec.Orders.Api.Controllers.Orders.DeleteOrder;
 using Hotovec.Orders.Api.Controllers.Orders.GetOrderById;
 using Hotovec.Orders.Application.UseCases.Commands.CreateOrder;
+using Hotovec.Orders.Application.UseCases.Commands.DeleteOrder;
 using Hotovec.Orders.Application.UseCases.Queries.GetOrderById;
 using Hotovec.Orders.Domain.Orders;
 using Hotovec.Orders.Domain.Orders.MonetaryInformation;
@@ -26,4 +28,7 @@ public static class ControllerExtensions
                 item.Quantity,
                 new Money(item.Price, new Currency(request.CurrencyCode))))
                 .ToArray());
+
+    public static DeleteOrderCommand AsCommand(this DeleteOrderRequest request) =>
+        new(new OrderNumber(request.OrderNumber));
 }
