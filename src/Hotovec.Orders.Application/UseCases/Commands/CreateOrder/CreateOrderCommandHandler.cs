@@ -18,6 +18,8 @@ public sealed class CreateOrderCommandHandler : ICommandHandler<CreateOrderComma
     
     public async Task ExecuteAsync(CreateOrderCommand command, CancellationToken cancellationToken = default)
     {
+        ArgumentNullException.ThrowIfNull(command);
+        
         if (await _repository.ExistsAsync(new OrderNumber(command.OrderNumber.Value), cancellationToken))
         {
             throw new ApplicationException("Unable to create order. Order with the same number already exists.");

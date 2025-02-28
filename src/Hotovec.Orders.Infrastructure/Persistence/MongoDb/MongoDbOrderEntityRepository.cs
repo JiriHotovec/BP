@@ -50,4 +50,14 @@ internal sealed class MongoDbOrderEntityRepository : IOrderEntityRepository
         
         return snapshot is not null;
     }
+
+    public async Task<bool> DeleteAsync(OrderNumber identity, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(identity);
+
+        var result = await _collection
+            .DeleteOneAsync(i => i.Id == identity.ToString(), cancellationToken: cancellationToken);
+
+        return result.DeletedCount > 0;
+    }
 }

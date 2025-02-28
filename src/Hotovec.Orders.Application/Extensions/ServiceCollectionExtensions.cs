@@ -1,4 +1,5 @@
 ﻿using Hotovec.Orders.Application.UseCases.Commands.CreateOrder;
+using Hotovec.Orders.Application.UseCases.Commands.DeleteOrder;
 using Hotovec.Orders.Application.UseCases.Common;
 using Hotovec.Orders.Application.UseCases.Queries.GetOrderById;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,6 +16,7 @@ public static class ServiceCollectionExtensions
         services.TryAddSingleton(TimeProvider.System);
         services.TryAddScoped<IQueryHandler<GetOrderByIdQuery, GetOrderByIdResult>, GetOrderByIdQueryHandler>();
         services.TryAddScoped<ICommandHandler<CreateOrderCommand>, CreateOrderCommandHandler>();
+        services.TryAddScoped<ICommandHandler<DeleteOrderCommand, bool>, DeleteOrderCommandHandler>();
         services.TryAddSingleton<ICreateOrderCommandFactory, CreateOrderCommandFactory>();
 
         return services;

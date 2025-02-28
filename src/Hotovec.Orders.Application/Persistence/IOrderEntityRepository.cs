@@ -26,4 +26,6 @@ public interface IOrderEntityRepository
     Task<OrderEntity?> TryGetAsync(OrderNumber identity, CancellationToken cancellationToken = default);
     
     Task<bool> ExistsAsync(OrderNumber identity, CancellationToken cancellationToken = default);
+    
+    Task<bool> DeleteAsync(OrderNumber identity, CancellationToken cancellationToken = default);
 }
