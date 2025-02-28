@@ -57,7 +57,7 @@ public sealed class OrdersController(
             : NotFound();
     }
     
-    [HttpPost("Create")]
+    [HttpPost]
     [ProducesResponseType(typeof(GetOrderByIdResponse), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> CreateOrder(

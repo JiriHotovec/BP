@@ -48,10 +48,10 @@ public sealed class OrderTests(CustomWebApplicationFactory factory)
         // Act
         var actual = async () =>
         {
-            var createResponse = await client.PostAsync("/api/Orders/Create", stringContent);
+            var createResponse = await client.PostAsync("/api/Orders", stringContent);
             createResponse.EnsureSuccessStatusCode();
             
-            var createResponse2 = await client.PostAsync("/api/Orders/Create", stringContent2);
+            var createResponse2 = await client.PostAsync("/api/Orders", stringContent2);
             createResponse2.EnsureSuccessStatusCode();
 
             var queryResponse = await client.GetAsync($"/api/Orders");
@@ -93,7 +93,7 @@ public sealed class OrderTests(CustomWebApplicationFactory factory)
         // Act
         var actual = async () =>
         {
-            var createResponse = await client.PostAsync("/api/Orders/Create", stringContent);
+            var createResponse = await client.PostAsync("/api/Orders", stringContent);
             createResponse.EnsureSuccessStatusCode();
 
             var queryResponse = await client.GetAsync($"/api/Orders/{orderNumber}");
@@ -128,7 +128,7 @@ public sealed class OrderTests(CustomWebApplicationFactory factory)
         // Act
         var actual = async () =>
         {
-            var createResponse = await client.PostAsync("/api/Orders/Create", stringContent);
+            var createResponse = await client.PostAsync("/api/Orders", stringContent);
             createResponse.EnsureSuccessStatusCode();
 
             var queryResponse = await client.DeleteAsync($"/api/Orders/{orderNumber}");
