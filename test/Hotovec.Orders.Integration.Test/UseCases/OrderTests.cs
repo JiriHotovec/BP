@@ -2,6 +2,7 @@
 using System.Text.Json;
 using Hotovec.Orders.Api;
 using Hotovec.Orders.Api.Controllers.Orders.CreateOrder;
+using Hotovec.Orders.Api.Controllers.Orders.GetAllOrders;
 using Microsoft.AspNetCore.Mvc.Testing;
 
 namespace Hotovec.Orders.Integration.Test.UseCases;
@@ -17,6 +18,60 @@ public sealed class OrderTests(CustomWebApplicationFactory factory)
 {
     private readonly WebApplicationFactory<Program> _factory = factory ?? throw new ArgumentNullException(nameof(factory));
 
+    [Fact]
+    public async Task CreateAndGetAllOrdersAsync()
+    {
+        // Arrange
+        const string orderNumber = "ORDER_100";
+        var createOrderRequest = new CreateOrderRequest(
+            orderNumber,
+            "Josh Bosh",
+            "USD",
+            [
+                new CreateOrderItem(1, "Item 1", 99.9m, 1)
+            ]);
+        var createOrderJson = JsonSerializer.Serialize(createOrderRequest);
+        var stringContent = new StringContent(createOrderJson, Encoding.UTF8, "application/json");
+        const string orderNumber2 = "ORDER_101";
+        var createOrderRequest2 = new CreateOrderRequest(
+            orderNumber2,
+            "Jack Black",
+            "EUR",
+            [
+                new CreateOrderItem(11, "Item 11", 199.9m, 12)
+            ]);
+        var createOrderJson2 = JsonSerializer.Serialize(createOrderRequest2);
+        var stringContent2 = new StringContent(createOrderJson2, Encoding.UTF8, "application/json");
+        var client = _factory.CreateClient();
+        const int expected = 2;
+
+        // Act
+        var actual = async () =>
+        {
+            var createResponse = await client.PostAsync("/api/Orders/Create", stringContent);
+            createResponse.EnsureSuccessStatusCode();
+            
+            var createResponse2 = await client.PostAsync("/api/Orders/Create", stringContent2);
+            createResponse2.EnsureSuccessStatusCode();
+
+            var queryResponse = await client.GetAsync($"/api/Orders");
+            queryResponse.EnsureSuccessStatusCode();
+            
+            var responseContent = await queryResponse.Content.ReadAsStringAsync();
+            var response = JsonSerializer.Deserialize<GetAllOrdersResponse>(responseContent, new JsonSerializerOptions()
+            {
+                PropertyNameCaseInsensitive = true
+            });
+            
+            // Assert
+            response.Should().NotBeNull();
+            response.OrderNumbers.Should().HaveCount(expected);
+        };
+
+        // Assert
+        await actual.Should().NotThrowAsync();
+    }
+    
     [Fact]
     public async Task CreateAndGetOrderAsync()
     {
@@ -48,8 +103,6 @@ public sealed class OrderTests(CustomWebApplicationFactory factory)
             
             // Assert
             responseContent.Should().Contain(expected);
-            
-            return responseContent;
         };
 
         // Assert

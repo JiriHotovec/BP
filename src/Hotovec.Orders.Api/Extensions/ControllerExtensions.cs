@@ -1,8 +1,10 @@
 ﻿using Hotovec.Orders.Api.Controllers.Orders.CreateOrder;
 using Hotovec.Orders.Api.Controllers.Orders.DeleteOrder;
+using Hotovec.Orders.Api.Controllers.Orders.GetAllOrders;
 using Hotovec.Orders.Api.Controllers.Orders.GetOrderById;
 using Hotovec.Orders.Application.UseCases.Commands.CreateOrder;
 using Hotovec.Orders.Application.UseCases.Commands.DeleteOrder;
+using Hotovec.Orders.Application.UseCases.Queries.GetAllOrders;
 using Hotovec.Orders.Application.UseCases.Queries.GetOrderById;
 using Hotovec.Orders.Domain.Orders;
 using Hotovec.Orders.Domain.Orders.MonetaryInformation;
@@ -12,6 +14,9 @@ namespace Hotovec.Orders.Api.Extensions;
 
 public static class ControllerExtensions
 {
+    public static GetAllOrdersResponse AsResponse(this GetAllOrdersResult result) =>
+        new(result.Orders.Select(order => order.Id.ToString()).ToList());
+    
     public static GetOrderByIdQuery AsQuery(this GetOrderByIdRequest request) =>
         new(new OrderNumber(request.OrderNumber));
     

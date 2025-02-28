@@ -40,6 +40,15 @@ internal sealed class MongoDbOrderEntityRepository : IOrderEntityRepository
         return snapshot is null ? null : new OrderEntity(snapshot);
     }
 
+    public async Task<IEnumerable<OrderEntity>> GetAllAsync(CancellationToken cancellationToken = default)
+    {
+        using var cursor =
+            await _collection.FindAsync(i => i.Id != string.Empty, cancellationToken: cancellationToken);
+        var snapshots = await cursor.ToListAsync(cancellationToken);
+        
+        return snapshots is not null ? snapshots.Select(snapshot => new OrderEntity(snapshot)) : [];
+    }
+
     public async Task<bool> ExistsAsync(OrderNumber identity, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(identity);

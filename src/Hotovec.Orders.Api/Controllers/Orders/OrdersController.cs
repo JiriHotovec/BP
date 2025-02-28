@@ -1,10 +1,12 @@
 using Hotovec.Orders.Api.Controllers.Orders.CreateOrder;
 using Hotovec.Orders.Api.Controllers.Orders.DeleteOrder;
+using Hotovec.Orders.Api.Controllers.Orders.GetAllOrders;
 using Hotovec.Orders.Api.Controllers.Orders.GetOrderById;
 using Hotovec.Orders.Api.Extensions;
 using Hotovec.Orders.Application.UseCases.Commands.CreateOrder;
 using Hotovec.Orders.Application.UseCases.Commands.DeleteOrder;
 using Hotovec.Orders.Application.UseCases.Common;
+using Hotovec.Orders.Application.UseCases.Queries.GetAllOrders;
 using Hotovec.Orders.Application.UseCases.Queries.GetOrderById;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,6 +16,7 @@ namespace Hotovec.Orders.Api.Controllers.Orders;
 [Route("api/[controller]")]
 [Produces("application/json")]
 public sealed class OrdersController(
+    IQueryHandler<GetAllOrdersQuery, GetAllOrdersResult> _getAllOrdersQueryHandler,
     IQueryHandler<GetOrderByIdQuery, GetOrderByIdResult> _getOrderByIdQueryHandler,
     ICommandHandler<CreateOrderCommand> _createOrderCommandHandler,
     ICommandHandler<DeleteOrderCommand, bool> _deleteOrderCommandHandler,
@@ -21,6 +24,18 @@ public sealed class OrdersController(
     : ControllerBase
 {
     private readonly ILogger<OrdersController> _logger = _logger ?? throw new ArgumentNullException(nameof(_logger));
+    
+    [HttpGet]
+    [ProducesResponseType(typeof(GetAllOrdersResponse), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetAllOrders(CancellationToken cancellationToken = default)
+    {
+        _logger.LogInformation("Getting all orders");
+
+        var result = await _getAllOrdersQueryHandler
+            .ExecuteAsync(new GetAllOrdersQuery(), cancellationToken);
+        
+        return Ok(result.AsResponse());
+    }
 
     [HttpGet("{OrderNumber}")]
     [ProducesResponseType(typeof(GetOrderByIdResponse), StatusCodes.Status200OK)]

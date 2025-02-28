@@ -25,6 +25,8 @@ public interface IOrderEntityRepository
     /// </returns>
     Task<OrderEntity?> TryGetAsync(OrderNumber identity, CancellationToken cancellationToken = default);
     
+    Task<IEnumerable<OrderEntity>> GetAllAsync(CancellationToken cancellationToken = default);
+    
     Task<bool> ExistsAsync(OrderNumber identity, CancellationToken cancellationToken = default);
     
     Task<bool> DeleteAsync(OrderNumber identity, CancellationToken cancellationToken = default);
