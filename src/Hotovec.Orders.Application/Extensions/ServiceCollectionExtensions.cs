@@ -1,7 +1,6 @@
-﻿using Hotovec.Orders.Application.UseCases.Commands.CreateNewOrder;
+﻿using Hotovec.Orders.Application.UseCases.Commands.CreateOrder;
 using Hotovec.Orders.Application.UseCases.Common;
 using Hotovec.Orders.Application.UseCases.Queries.GetOrderById;
-using Hotovec.Orders.Domain.Orders;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 

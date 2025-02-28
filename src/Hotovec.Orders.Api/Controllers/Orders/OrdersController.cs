@@ -1,7 +1,7 @@
 using Hotovec.Orders.Api.Controllers.Orders.CreateOrder;
 using Hotovec.Orders.Api.Controllers.Orders.GetOrderById;
 using Hotovec.Orders.Api.Extensions;
-using Hotovec.Orders.Application.UseCases.Commands.CreateNewOrder;
+using Hotovec.Orders.Application.UseCases.Commands.CreateOrder;
 using Hotovec.Orders.Application.UseCases.Common;
 using Hotovec.Orders.Application.UseCases.Queries.GetOrderById;
 using Microsoft.AspNetCore.Mvc;

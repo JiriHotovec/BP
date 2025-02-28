@@ -1,6 +1,6 @@
 ﻿using Hotovec.Orders.Domain.Orders;
 
-namespace Hotovec.Orders.Application.UseCases.Commands.CreateNewOrder;
+namespace Hotovec.Orders.Application.UseCases.Commands.CreateOrder;
 
 public interface ICreateOrderCommandFactory
 {

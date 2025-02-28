@@ -1,7 +1,7 @@
 ﻿using Hotovec.Orders.Domain.Orders;
 using Hotovec.Orders.Domain.Orders.Dtos;
 
-namespace Hotovec.Orders.Application.UseCases.Commands.CreateNewOrder;
+namespace Hotovec.Orders.Application.UseCases.Commands.CreateOrder;
 
 public sealed class CreateOrderCommandFactory : ICreateOrderCommandFactory
 {

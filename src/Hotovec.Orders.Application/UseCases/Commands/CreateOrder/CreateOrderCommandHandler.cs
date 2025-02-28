@@ -3,7 +3,7 @@ using Hotovec.Orders.Application.UseCases.Common;
 using Hotovec.Orders.Domain.Orders;
 using ApplicationException = Hotovec.Orders.Application.Exceptions.ApplicationException;
 
-namespace Hotovec.Orders.Application.UseCases.Commands.CreateNewOrder;
+namespace Hotovec.Orders.Application.UseCases.Commands.CreateOrder;
 
 public sealed class CreateOrderCommandHandler : ICommandHandler<CreateOrderCommand>
 {
