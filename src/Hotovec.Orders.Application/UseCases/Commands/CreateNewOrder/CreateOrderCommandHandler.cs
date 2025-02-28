@@ -5,18 +5,18 @@ using ApplicationException = Hotovec.Orders.Application.Exceptions.ApplicationEx
 
 namespace Hotovec.Orders.Application.UseCases.Commands.CreateNewOrder;
 
-public sealed class CreateNewOrderCommandHandler : ICommandHandler<CreateNewOrderCommand>
+public sealed class CreateOrderCommandHandler : ICommandHandler<CreateOrderCommand>
 {
     private readonly IOrderEntityRepository _repository;
-    private readonly ICreateNewOrderCommandFactory _factory;
+    private readonly ICreateOrderCommandFactory _factory;
 
-    public CreateNewOrderCommandHandler(IOrderEntityRepository repository, ICreateNewOrderCommandFactory factory)
+    public CreateOrderCommandHandler(IOrderEntityRepository repository, ICreateOrderCommandFactory factory)
     {
         _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         _factory = factory ?? throw new ArgumentNullException(nameof(factory));
     }
     
-    public async Task ExecuteAsync(CreateNewOrderCommand command, CancellationToken cancellationToken = default)
+    public async Task ExecuteAsync(CreateOrderCommand command, CancellationToken cancellationToken = default)
     {
         if (await _repository.ExistsAsync(new OrderNumber(command.OrderNumber.Value), cancellationToken))
         {

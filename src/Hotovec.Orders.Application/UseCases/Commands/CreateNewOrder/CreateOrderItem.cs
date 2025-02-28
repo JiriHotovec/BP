@@ -2,7 +2,7 @@
 
 namespace Hotovec.Orders.Application.UseCases.Commands.CreateNewOrder;
 
-public sealed record CreateNewOrderItem(
+public sealed record CreateOrderItem(
     int Id,
     string Name,
     int Quantity,

@@ -3,8 +3,8 @@ using Hotovec.Orders.Domain.Orders.MonetaryInformation;
 
 namespace Hotovec.Orders.Application.UseCases.Commands.CreateNewOrder;
 
-public sealed record CreateNewOrderCommand(
+public sealed record CreateOrderCommand(
     OrderNumber OrderNumber,
     Currency Currency,
-    string CustomeName,
-    params CreateNewOrderItem[] Items);
+    string CustomerName,
+    params CreateOrderItem[] Items);

@@ -2,7 +2,7 @@
 
 namespace Hotovec.Orders.Application.UseCases.Commands.CreateNewOrder;
 
-public interface ICreateNewOrderCommandFactory
+public interface ICreateOrderCommandFactory
 {
-    OrderEntity Create(CreateNewOrderCommand command);
+    OrderEntity Create(CreateOrderCommand command);
 }

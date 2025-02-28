@@ -14,9 +14,9 @@ public static class ServiceCollectionExtensions
         ArgumentNullException.ThrowIfNull(services);
         
         services.TryAddSingleton(TimeProvider.System);
-        services.TryAddScoped<IQueryHandler<GetOrderByIdQuery, OrderEntity?>, GetOrderByIdQueryHandler>();
-        services.TryAddScoped<ICommandHandler<CreateNewOrderCommand>, CreateNewOrderCommandHandler>();
-        services.TryAddSingleton<ICreateNewOrderCommandFactory, CreateNewOrderCommandFactory>();
+        services.TryAddScoped<IQueryHandler<GetOrderByIdQuery, GetOrderByIdResult>, GetOrderByIdQueryHandler>();
+        services.TryAddScoped<ICommandHandler<CreateOrderCommand>, CreateOrderCommandHandler>();
+        services.TryAddSingleton<ICreateOrderCommandFactory, CreateOrderCommandFactory>();
 
         return services;
     }

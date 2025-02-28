@@ -3,16 +3,16 @@ using Hotovec.Orders.Domain.Orders.Dtos;
 
 namespace Hotovec.Orders.Application.UseCases.Commands.CreateNewOrder;
 
-public sealed class CreateNewOrderCommandFactory : ICreateNewOrderCommandFactory
+public sealed class CreateOrderCommandFactory : ICreateOrderCommandFactory
 {
     private readonly TimeProvider _timeProvider;
 
-    public CreateNewOrderCommandFactory(TimeProvider timeProvider)
+    public CreateOrderCommandFactory(TimeProvider timeProvider)
     {
         _timeProvider = timeProvider;
     }
     
-    public OrderEntity Create(CreateNewOrderCommand command)
+    public OrderEntity Create(CreateOrderCommand command)
     {
         ArgumentNullException.ThrowIfNull(command);
         
@@ -24,6 +24,6 @@ public sealed class CreateNewOrderCommandFactory : ICreateNewOrderCommandFactory
             ProductName = i.Name
         }).ToArray();
         
-        return new OrderEntity(command.OrderNumber, command.CustomeName, command.Currency, dateCreated, items);
+        return new OrderEntity(command.OrderNumber, command.CustomerName, command.Currency, dateCreated, items);
     }
 }
