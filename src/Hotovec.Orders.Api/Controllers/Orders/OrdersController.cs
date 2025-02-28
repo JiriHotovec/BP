@@ -29,7 +29,7 @@ public sealed class OrdersController(
     [ProducesResponseType(typeof(GetAllOrdersResponse), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetAllOrders(CancellationToken cancellationToken = default)
     {
-        _logger.LogInformation("Getting all orders");
+        _logger.LogInformation("Getting all orders.");
 
         var result = await _getAllOrdersQueryHandler
             .ExecuteAsync(new GetAllOrdersQuery(), cancellationToken);
@@ -47,7 +47,7 @@ public sealed class OrdersController(
     {
         ArgumentNullException.ThrowIfNull(request);
         
-        _logger.LogInformation("Getting order [{OrderNumber}]", request.OrderNumber);
+        _logger.LogInformation("Getting order [{OrderNumber}].", request.OrderNumber);
 
         var result = await _getOrderByIdQueryHandler
             .ExecuteAsync(request.AsQuery(), cancellationToken);
@@ -66,7 +66,7 @@ public sealed class OrdersController(
     {
         ArgumentNullException.ThrowIfNull(request);
         
-        _logger.LogInformation("Creating order [{Order}]", request);
+        _logger.LogInformation("Creating order [{Order}].", request);
         
         await _createOrderCommandHandler
             .ExecuteAsync(request.AsCommand(), cancellationToken);
@@ -83,7 +83,7 @@ public sealed class OrdersController(
     {
         ArgumentNullException.ThrowIfNull(request);
         
-        _logger.LogInformation("Deleting order [{OrderNumber}]", request.OrderNumber);
+        _logger.LogInformation("Deleting order [{OrderNumber}].", request.OrderNumber);
         
         var result = await _deleteOrderCommandHandler
             .ExecuteAsync(request.AsCommand(), cancellationToken);
