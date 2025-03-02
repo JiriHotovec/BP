@@ -14,13 +14,13 @@ namespace Hotovec.Orders.Api.Extensions;
 
 public static class ControllerExtensions
 {
-    public static GetAllOrdersResponse AsResponse(this GetAllOrdersResult result) =>
+    public static GetAllOrdersResponse AsResponse(this GetAllOrdersQueryResult result) =>
         new(result.Orders.Select(order => order.Id.ToString()).ToList());
     
     public static GetOrderByIdQuery AsQuery(this GetOrderByIdRequest request) =>
         new(new OrderNumber(request.OrderNumber));
     
-    public static GetOrderByIdResponse AsResponse(this GetOrderByIdResult result) =>
+    public static GetOrderByIdResponse AsResponse(this GetOrderByIdQueryResult result) =>
         new(result.Order!.Id.ToString());
     
     public static CreateOrderCommand AsCommand(this CreateOrderRequest request) =>

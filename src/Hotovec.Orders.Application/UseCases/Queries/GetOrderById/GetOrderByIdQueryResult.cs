@@ -2,4 +2,4 @@
 
 namespace Hotovec.Orders.Application.UseCases.Queries.GetOrderById;
 
-public sealed record GetOrderByIdResult(OrderEntity? Order);
+public sealed record GetOrderByIdQueryResult(OrderEntity? Order);

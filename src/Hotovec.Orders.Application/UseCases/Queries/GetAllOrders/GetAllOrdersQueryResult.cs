@@ -2,4 +2,4 @@
 
 namespace Hotovec.Orders.Application.UseCases.Queries.GetAllOrders;
 
-public sealed record GetAllOrdersResult(List<OrderEntity> Orders);
+public sealed record GetAllOrdersQueryResult(List<OrderEntity> Orders);

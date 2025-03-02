@@ -16,8 +16,8 @@ namespace Hotovec.Orders.Api.Controllers.Orders;
 [Route("api/[controller]")]
 [Produces("application/json")]
 public sealed class OrdersController(
-    IQueryHandler<GetAllOrdersQuery, GetAllOrdersResult> _getAllOrdersQueryHandler,
-    IQueryHandler<GetOrderByIdQuery, GetOrderByIdResult> _getOrderByIdQueryHandler,
+    IQueryHandler<GetAllOrdersQuery, GetAllOrdersQueryResult> _getAllOrdersQueryHandler,
+    IQueryHandler<GetOrderByIdQuery, GetOrderByIdQueryResult> _getOrderByIdQueryHandler,
     ICommandHandler<CreateOrderCommand> _createOrderCommandHandler,
     ICommandHandler<DeleteOrderCommand, bool> _deleteOrderCommandHandler,
     ILogger<OrdersController> _logger)

@@ -16,8 +16,8 @@ public static class ServiceCollectionExtensions
         
         services.TryAddSingleton(TimeProvider.System);
         
-        services.TryAddScoped<IQueryHandler<GetAllOrdersQuery, GetAllOrdersResult>, GetAllOrdersQueryHandler>();
-        services.TryAddScoped<IQueryHandler<GetOrderByIdQuery, GetOrderByIdResult>, GetOrderByIdQueryHandler>();
+        services.TryAddScoped<IQueryHandler<GetAllOrdersQuery, GetAllOrdersQueryResult>, GetAllOrdersQueryHandler>();
+        services.TryAddScoped<IQueryHandler<GetOrderByIdQuery, GetOrderByIdQueryResult>, GetOrderByIdQueryHandler>();
         
         services.TryAddScoped<ICommandHandler<CreateOrderCommand>, CreateOrderCommandHandler>();
         services.TryAddScoped<ICommandHandler<DeleteOrderCommand, bool>, DeleteOrderCommandHandler>();
