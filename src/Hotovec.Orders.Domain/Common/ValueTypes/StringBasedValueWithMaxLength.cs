@@ -1,6 +1,6 @@
 ﻿namespace Hotovec.Orders.Domain.Common.ValueTypes;
 
-public class StringBasedValueWithMaxLength<T> : StringBasedValueType<T> where T : StringBasedValueType<T>
+public abstract class StringBasedValueWithMaxLength<T> : StringBasedValueType<T> where T : StringBasedValueType<T>
 {
     protected StringBasedValueWithMaxLength(
         string value,
