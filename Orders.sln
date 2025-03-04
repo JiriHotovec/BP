@@ -29,7 +29,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "yaml", "yaml", "{A9E97BCB-1
 		compose.yaml = compose.yaml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotovec.Orders.ConsoleApp", "src\Hotovec.Orders.ConsoleApp\Hotovec.Orders.ConsoleApp.csproj", "{073B038A-41C7-4A6E-9FEE-0634FE548ABD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotovec.Orders.Benchmark.Test.ConsoleApp", "src\Hotovec.Orders.Benchmark.Test.ConsoleApp\Hotovec.Orders.Benchmark.Test.ConsoleApp.csproj", "{073B038A-41C7-4A6E-9FEE-0634FE548ABD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotovec.Orders.Performance.test.ConsoleApp", "src\Hotovec.Orders.Performance.test.ConsoleApp\Hotovec.Orders.Performance.test.ConsoleApp.csproj", "{F53F0D29-05D0-4EC4-985E-3C257D288D33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{073B038A-41C7-4A6E-9FEE-0634FE548ABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{073B038A-41C7-4A6E-9FEE-0634FE548ABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{073B038A-41C7-4A6E-9FEE-0634FE548ABD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F53F0D29-05D0-4EC4-985E-3C257D288D33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F53F0D29-05D0-4EC4-985E-3C257D288D33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F53F0D29-05D0-4EC4-985E-3C257D288D33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F53F0D29-05D0-4EC4-985E-3C257D288D33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F7AD4A07-37AB-4A14-A75B-E34C59546829} = {DD54764B-956A-4DFE-A0EC-8B92EFCDEB0C}
@@ -94,5 +100,6 @@ Global
 		{98551137-0B8E-4527-87F7-D5036E7509BC} = {DD54764B-956A-4DFE-A0EC-8B92EFCDEB0C}
 		{BC133442-5C97-4A43-8662-16A617947D14} = {DD54764B-956A-4DFE-A0EC-8B92EFCDEB0C}
 		{073B038A-41C7-4A6E-9FEE-0634FE548ABD} = {E215644A-5245-4EB1-AEAF-9AB4EF068844}
+		{F53F0D29-05D0-4EC4-985E-3C257D288D33} = {E215644A-5245-4EB1-AEAF-9AB4EF068844}
 	EndGlobalSection
 EndGlobal
