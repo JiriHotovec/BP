@@ -1,10 +1,13 @@
-﻿namespace Hotovec.Orders.Domain.Common.ValueTypes;
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Hotovec.Orders.Domain.Common.ValueTypes;
 
 /// <summary>
 /// Represents an abstract base class for creating value types based on a string.
 /// This class provides equality comparison and string representation functionality
 /// using a specified <see cref="StringComparison"/>.
 /// </summary>
+[ExcludeFromCodeCoverage(Justification = "Abstract class")]
 public abstract class StringBasedValueType<T> : IEquatable<T> where T : StringBasedValueType<T>
 {
     /// Gets the string representation of the value encapsulated by the string-based value type.
