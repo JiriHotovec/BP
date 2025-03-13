@@ -21,12 +21,6 @@ public readonly record struct Currency
         "XPF", "XPT", "XSU", "XTS", "XUA", "XXX", "YER", "ZAR", "ZMW", "ZWG"
     ];
 
-    /// <summary>
-    ///     Creates new instance of <see cref="Currency" />
-    /// </summary>
-    /// <param name="code">A three-letter currency code defined in ISO 4217</param>
-    /// <exception cref="ArgumentException">Thrown when provided code is not valid ISO 4217 currency code</exception>
-    /// <example>var c = new Currency("JPY");</example>
     public Currency(string code)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(code);
@@ -40,9 +34,6 @@ public readonly record struct Currency
         Code = normalized;
     }
 
-    /// <summary>
-    /// Currency code as string
-    /// </summary>
     public string Code { get; }
 
     private static bool IsAmongAllowedCodes(string code)

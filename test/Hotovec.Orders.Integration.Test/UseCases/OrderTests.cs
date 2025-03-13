@@ -7,12 +7,6 @@ using Microsoft.AspNetCore.Mvc.Testing;
 
 namespace Hotovec.Orders.Integration.Test.UseCases;
 
-/// <summary>
-/// Takes configuration from API project and runs its instance. It needs already running
-/// docker containers with database etc. Uses standard unmodified <see cref="WebApplicationFactory{TEntryPoint}" />
-/// Needs internalsVisibleTo
-/// Cannot be used in pipeline as containers will be missing
-/// </summary>
 public sealed class OrderTests(CustomWebApplicationFactory factory)
     : IClassFixture<CustomWebApplicationFactory>, IAsyncDisposable
 {

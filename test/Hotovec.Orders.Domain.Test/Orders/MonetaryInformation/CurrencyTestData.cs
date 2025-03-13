@@ -3,13 +3,6 @@ using Hotovec.Orders.Domain.Orders.MonetaryInformation;
 
 namespace Hotovec.Orders.Domain.Test.Orders.MonetaryInformation;
 
-/// <summary>
-/// Test data for <see cref="Currency"/>
-/// Test data are represented as run-time result of GetEnumerator method
-/// This approach is useful when:
-/// - there is large number of test values
-/// - test values cannot be expressed as compile-time constants
-/// </summary>
 public sealed class CurrencyTestData : IEnumerable<object[]>
 {
     public IEnumerator<object[]> GetEnumerator()

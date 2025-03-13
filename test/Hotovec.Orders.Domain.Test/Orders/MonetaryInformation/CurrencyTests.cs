@@ -6,7 +6,6 @@ namespace Hotovec.Orders.Domain.Test.Orders.MonetaryInformation;
 public sealed class CurrencyTests
 {
     [Theory]
-    // Data are taken from specialized class implementing IEnumerable<object[]> interface
     [ClassData(typeof(CurrencyTestData))]
     public void Ctor_AllowedCurrency_Creates(string input)
     {

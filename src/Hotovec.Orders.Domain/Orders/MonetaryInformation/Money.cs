@@ -4,15 +4,6 @@ using Hotovec.Orders.Domain.Orders.Snapshots;
 
 namespace Hotovec.Orders.Domain.Orders.MonetaryInformation;
 
-/// <summary>
-/// Represents a monetary value consisting of an amount and a currency.
-/// Value is rounded to two decimal places.
-/// Only instances with the same currency can be compared.
-/// </summary>
-/// <remarks>
-/// This class provides support for monetary calculations, comparisons,
-/// equality checks, and formatting.
-/// </remarks>
 public sealed class Money : IEquatable<Money>, IComparable<Money>, IComparable, ISnapshotable<MoneySnapshot>
 {
     public Money(decimal amount, Currency currency)
