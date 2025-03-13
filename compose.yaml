@@ -1,16 +1,16 @@
 ﻿services:
-  hotovec.orders.api:
-    image: hotovec.orders.api
-    container_name: orders
-    ports:
-      - "8080:8080"
-    build:
-      context: .
-      dockerfile: src/Hotovec.Orders.Api/Dockerfile
-    depends_on:
-      - mongodb
-    networks:
-      - app_network
+#  hotovec.orders.api:
+#    image: hotovec.orders.api
+#    container_name: orders
+#    ports:
+#      - "8080:8080"
+#    build:
+#      context: .
+#      dockerfile: src/Hotovec.Orders.Api/Dockerfile
+#    depends_on:
+#      - mongodb
+#    networks:
+#      - app_network
   mongodb:
     image: mongo:6.0
     container_name: mongodb
@@ -23,6 +23,6 @@
     networks:
       - app_network
 
-networks:
-  app_network:
-    driver: bridge
+#networks:
+#  app_network:
+#    driver: bridge
