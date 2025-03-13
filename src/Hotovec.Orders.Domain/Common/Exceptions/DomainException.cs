@@ -19,23 +19,9 @@
 public sealed class DomainException : Exception
 {
     /// <summary>
-    /// Represents an exception that occurs within the domain logic of the application.
-    /// </summary>
-    public DomainException()
-    {
-    }
-
-    /// <summary>
     /// Represents an exception that occurs within the domain layer of the application.
     /// </summary>
     public DomainException(string message) : base(message)
-    {
-    }
-
-    /// <summary>
-    /// Represents errors that occur within the domain layer of the application.
-    /// </summary>
-    public DomainException(string message, Exception inner) : base(message, inner)
     {
     }
 }
