@@ -2,6 +2,7 @@ using System.Reflection;
 
 namespace Hotovec.Orders.Architecture.Test;
 
+[ExcludeFromCodeCoverage(Justification = "Test class")]
 public static class AssemblyConstants
 {
     public const string ApiAssemblyName = "Hotovec.Orders.Api";

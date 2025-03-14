@@ -5,6 +5,7 @@ using Hotovec.Orders.Domain.Orders.Snapshots;
 namespace Hotovec.Orders.Domain.Test.Orders;
 
 [Category("unit")]
+[ExcludeFromCodeCoverage(Justification = "Test class")]
 public sealed class OrderItemEntityTests
 {
     [Fact]

@@ -10,6 +10,7 @@ using Testcontainers.MongoDb;
 
 namespace Hotovec.Orders.Integration.Test.UseCases;
 
+[ExcludeFromCodeCoverage(Justification = "Test class")]
 public sealed class CustomWebApplicationFactory : WebApplicationFactory<Program>, IAsyncLifetime
 {
     private readonly MongoDbContainer _mongoDbContainer;

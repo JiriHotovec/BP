@@ -1,4 +1,5 @@
-﻿using Hotovec.Orders.Application.Persistence;
+﻿using System.ComponentModel;
+using Hotovec.Orders.Application.Persistence;
 using Hotovec.Orders.Application.UseCases.Commands.CreateOrder;
 using Hotovec.Orders.Domain.Orders;
 using Hotovec.Orders.Domain.Orders.MonetaryInformation;
@@ -7,6 +8,8 @@ using ApplicationException = Hotovec.Orders.Application.Exceptions.ApplicationEx
 
 namespace Hotovec.Orders.Application.Test.UseCases.Commands.CreateOrder;
 
+[Category("unit")]
+[ExcludeFromCodeCoverage(Justification = "Test class")]
 public class CreateOrderCommandHandlerTests
 {
     [Fact]

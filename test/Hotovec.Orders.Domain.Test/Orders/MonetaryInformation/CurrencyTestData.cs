@@ -1,8 +1,8 @@
 ﻿using System.Collections;
-using Hotovec.Orders.Domain.Orders.MonetaryInformation;
 
 namespace Hotovec.Orders.Domain.Test.Orders.MonetaryInformation;
 
+[ExcludeFromCodeCoverage(Justification = "Test class")]
 public sealed class CurrencyTestData : IEnumerable<object[]>
 {
     public IEnumerator<object[]> GetEnumerator()

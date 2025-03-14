@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.ComponentModel;
+using System.Text;
 using System.Text.Json;
 using Hotovec.Orders.Api;
 using Hotovec.Orders.Api.Controllers.Orders.CreateOrder;
@@ -7,6 +8,8 @@ using Microsoft.AspNetCore.Mvc.Testing;
 
 namespace Hotovec.Orders.Integration.Test.UseCases;
 
+[Category("integration")]
+[ExcludeFromCodeCoverage(Justification = "Test class")]
 public sealed class OrderTests(CustomWebApplicationFactory factory)
     : IClassFixture<CustomWebApplicationFactory>, IAsyncDisposable
 {

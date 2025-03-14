@@ -1,6 +1,7 @@
 ﻿namespace Hotovec.Orders.Architecture.Test;
 
 [Category("architecture")]
+[ExcludeFromCodeCoverage(Justification = "Test class")]
 public sealed class DependenciesTests
 {
     [Fact]

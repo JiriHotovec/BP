@@ -4,6 +4,7 @@ using Hotovec.Orders.Domain.Common.Entities;
 namespace Hotovec.Orders.Architecture.Test;
 
 [Category("architecture")]
+[ExcludeFromCodeCoverage(Justification = "Test class")]
 public sealed class NamingConventionTests
 {
     [Fact]

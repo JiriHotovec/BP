@@ -3,6 +3,7 @@
 namespace Hotovec.Orders.Domain.Test.Orders;
 
 [Category("unit")]
+[ExcludeFromCodeCoverage(Justification = "Test class")]
 public sealed class OrderNumberTests
 {
     [Fact]

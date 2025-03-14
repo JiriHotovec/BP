@@ -1,9 +1,11 @@
-﻿using BenchmarkDotNet.Attributes;
+﻿using System.Diagnostics.CodeAnalysis;
+using BenchmarkDotNet.Attributes;
 using Hotovec.Orders.Domain.Orders.MonetaryInformation;
 
 namespace Hotovec.Orders.Performance.Test;
 
 [MemoryDiagnoser]
+[ExcludeFromCodeCoverage(Justification = "Test class")]
 public class Benchmarks
 {
     /// <summary>

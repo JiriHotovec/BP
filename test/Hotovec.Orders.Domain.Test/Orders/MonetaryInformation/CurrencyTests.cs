@@ -3,6 +3,7 @@
 namespace Hotovec.Orders.Domain.Test.Orders.MonetaryInformation;
 
 [Category("unit")]
+[ExcludeFromCodeCoverage(Justification = "Test class")]
 public sealed class CurrencyTests
 {
     [Theory]

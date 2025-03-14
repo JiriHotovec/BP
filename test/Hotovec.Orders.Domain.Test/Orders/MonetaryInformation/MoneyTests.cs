@@ -5,6 +5,7 @@ using Xunit.Abstractions;
 namespace Hotovec.Orders.Domain.Test.Orders.MonetaryInformation;
 
 [Category("unit")]
+[ExcludeFromCodeCoverage(Justification = "Test class")]
 public sealed class MoneyTests(ITestOutputHelper _testOutputHelper)
 {
     [Fact]
