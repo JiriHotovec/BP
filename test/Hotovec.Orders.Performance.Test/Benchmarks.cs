@@ -13,7 +13,7 @@ public class Benchmarks
     ///     This property determines the number of times the benchmark loops will be executed.
     ///     It is used to assess the performance of operations with varying iteration counts.
     /// </remarks>
-    [Params(100_000, 1_000_000)]
+    [Params(10_000, 100_000, 1_000_000)]
     public int N { get; set; }
 
     [Benchmark]
